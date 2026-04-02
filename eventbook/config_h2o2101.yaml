@@ -1,0 +1,25 @@
+seed: 42
+
+data:
+  root: ./dataset/H2O2101
+  annotation_dir: ./dataset/H2O2101/annotation
+  mask_root: ./dataset/H2O2101/sam3_masks
+
+train_videos:
+  - 500C-TEMmovie2-jpg
+  - 500C-TEMmovie3-jpg
+  - 600C-TEMmovie1-jpg
+  
+
+feature:
+  min_region_area: 8
+  min_overlap_pixels: 6
+  split_min_children: 2
+  merge_min_parents: 2
+  area_ratio_low: 0.30
+  area_ratio_high: 2.50
+  decision_threshold: 0.55
+  dedup_frame_gap: 2
+
+model:
+  save_path: ./checkpoints/h2o2101_event_detector.joblib
